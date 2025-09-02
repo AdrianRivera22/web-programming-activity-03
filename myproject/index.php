@@ -87,13 +87,12 @@ The GET method makes it so that any data you have entered will display it to the
 the POST method makes it so that it hides the data you have entered, not showing in the URL.
 -->
     <form action="" method="post">
-        <form action="viewproduct.php" method="post">
         <label>Product Name: </label><br>
-        <input type="text" name="product_name" value="<?php echo $product_name ?>"><br>
+        <input type="text" name="product_name" class="text-input" value="<?php echo $product_name ?>"><br>
         <p style="color:red; margin:0;"><?php echo $product_name_error ?? ""; ?></p>
 
         <label>Category: </label><br>
-        <select name="category" required>
+        <select name="category" class="form-select">
             <option value="">--Select Category--</option>
             <option value="Category A" <?php if($category == "Category A") echo "selected"; ?>>Category A</option>
             <option value="Category B" <?php if($category == "Category B") echo "selected"; ?>>Category B</option>
@@ -104,22 +103,22 @@ the POST method makes it so that it hides the data you have entered, not showing
 
 
         <label>Price(&#8369;)</label><br>
-        <input type="number" name="price" step="0.01" value="<?php echo $price ?>"><br>
+        <input type="number" name="price" step="0.01" class="number-input" value="<?php echo $price ?>"><br>
         <p class="error"><?php echo $price_error ?? ""; ?></p>
 
         <label>Stock Quantity</label><br>
-        <input type="number" name="stock_quantity" min="0" value="<?php echo $stock_quantity ?>"><br>
+        <input type="number" name="stock_quantity" min="0" class="number-input" value="<?php echo $stock_quantity ?>"><br>
         <p class="error"><?php echo $stock_quantity_error ?? ""; ?></p>
 
         <label>Expiration Date:</label><br>
-        <input type="date" name="expiration_date" value="<?php echo $expiration_date ?>"><br>
+        <input type="date" name="expiration_date" class="date-input" value="<?php echo $expiration_date ?>"><br>
         <p class="error"><?php echo $expiration_date_error ?? ""; ?></p>
 
         <label>Status:</label><br>
-        <input type="radio" name="status" value="active" <?php if($status == "active") echo "checked"; ?>> Active<br>
-        <input type="radio" name="status" value="inactive" <?php if($status == "inactive") echo "checked"; ?>> Inactive<br>
+        <input type="radio" name="status" class="radio-input" value="active" <?php if($status == "active") echo "checked"; ?>> Active<br>
+        <input type="radio" name="status" class="radio-input" value="inactive" <?php if($status == "inactive") echo "checked"; ?>> Inactive<br>
         <p class="error"><?php echo $status_error ?? ""; ?></p>
-        <input type="submit" value="Save Product">
+        <input type="submit" class="submit-button" value="Save Product">
     </form>
 </body>
 </html>
